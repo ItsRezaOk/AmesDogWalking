@@ -188,6 +188,29 @@
             box-shadow: var(--shadow-hover);
         }
 
+        /* Promo Banner */
+        .promo-banner {
+            background: var(--soft-orange);
+            color: var(--dark-gray);
+            padding: 1rem 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: block;
+            text-decoration: none;
+        }
+
+        .promo-banner:hover,
+        .promo-banner:focus {
+            background: var(--primary-green);
+            color: var(--white);
+            outline: 2px solid var(--primary-green);
+            outline-offset: 2px;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
         /* Hero section */
         .hero {
             padding: 6rem 0;
@@ -748,6 +771,7 @@
         <!-- Pricing -->
         <section class="section section-accent" id="pricing">
             <div class="container">
+                <a href="#plans" class="promo-banner">New to Pup Loop Ames? Get your first week free when you sign up for a monthly plan!</a>
                 <h2>Simple, Transparent Pricing</h2>
                 <div class="image-placeholder" style="max-width: 400px; margin: 2rem auto; min-height: 150px;">
                     <strong>Pricing Image Suggestion:</strong>
