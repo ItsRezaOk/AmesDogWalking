@@ -16,11 +16,10 @@
         :root {
             --primary-green: #4a7c59;
             --light-green: #6b9c7a;
-            --accent-green: #8fbc8f;
-            --pale-green: #e8f5e8;
             --warm-beige: #f5f1eb;
             --soft-orange: #ffa726;
-            --light-blue: #81c784;
+            --sky-blue: #87ceeb;
+            --earth-brown: #8b5e3c;
             --warm-gray: #6b6860;
             --dark-gray: #2d2d2d;
             --white: #ffffff;
@@ -182,7 +181,7 @@
 
         .btn-secondary:hover,
         .btn-secondary:focus {
-            background: var(--pale-green);
+            background: var(--warm-beige);
             outline: 2px solid var(--primary-green);
             outline-offset: 2px;
             transform: translateY(-2px);
@@ -192,7 +191,7 @@
         /* Hero section */
         .hero {
             padding: 6rem 0;
-            background: linear-gradient(135deg, var(--pale-green) 0%, var(--warm-beige) 50%, #fff8f0 100%);
+            background: linear-gradient(135deg, var(--sky-blue) 0%, var(--warm-beige) 50%, #fff8f0 100%);
             position: relative;
             overflow: hidden;
         }
@@ -286,7 +285,7 @@
             justify-content: center;
             flex-wrap: wrap;
             padding: 2rem 0;
-            background: linear-gradient(90deg, var(--white) 0%, var(--pale-green) 50%, var(--white) 100%);
+            background: linear-gradient(90deg, var(--white) 0%, var(--warm-beige) 50%, var(--white) 100%);
         }
 
         .chip {
@@ -296,7 +295,7 @@
             font-weight: 600;
             color: var(--primary-green);
             box-shadow: var(--shadow);
-            border: 2px solid var(--pale-green);
+            border: 2px solid var(--warm-beige);
             transition: all 0.3s ease;
         }
 
@@ -340,7 +339,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary-green), var(--light-green), var(--accent-green));
+            background: linear-gradient(90deg, var(--primary-green), var(--light-green), var(--sky-blue));
             transform: translateX(-100%);
             transition: transform 0.3s ease;
         }
@@ -362,7 +361,7 @@
         .plan-card.featured {
             border: 2px solid var(--primary-green);
             transform: scale(1.02);
-            background: linear-gradient(135deg, var(--white) 0%, var(--pale-green) 100%);
+            background: linear-gradient(135deg, var(--white) 0%, var(--sky-blue) 100%);
         }
 
         .plan-card.featured::before {
@@ -464,14 +463,14 @@
 
         summary:hover,
         summary:focus {
-            background: var(--pale-green);
+            background: var(--warm-beige);
             outline: 2px solid var(--primary-green);
             outline-offset: -2px;
         }
 
         details[open] summary {
             border-bottom: 1px solid #e5e7eb;
-            background: linear-gradient(90deg, var(--pale-green), var(--white));
+            background: linear-gradient(90deg, var(--warm-beige), var(--white));
         }
 
         details p {
@@ -481,7 +480,7 @@
 
         /* Footer styles */
         .footer {
-            background: linear-gradient(135deg, var(--dark-gray) 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--earth-brown) 100%);
             color: var(--white);
             text-align: center;
             padding: 2rem 0;
@@ -516,7 +515,7 @@
         }
 
         .stats-highlight {
-            background: linear-gradient(135deg, var(--pale-green), var(--white));
+            background: linear-gradient(135deg, var(--warm-beige), var(--white));
             padding: 1rem;
             border-radius: var(--border-radius);
             border-left: 4px solid var(--primary-green);
@@ -999,7 +998,7 @@
                 <p><strong>[5]</strong> AVMA, Cornell University College of Veterinary Medicine, and Humane Society of the United States – Weather safety guidelines for pets including heat protection, cold exposure, paw safety, and hydration protocols.</p>
             </div>
             
-            <hr style="margin: 2rem 0; border: none; border-top: 1px solid #555;">
+            <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--earth-brown);">
             
             <p>&copy; 2025 Puppy Loop Ames. Professional dog walking service in Ames, Iowa.</p>
         </div>
