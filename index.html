@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puppy Loop Ames - Professional Dog Walking Service in Ames, Iowa</title>
+    <meta name="description" content="Reliable dog walking service in Ames, IA. Daily walks for busy pet owners, students, and families. Insured walker with GPS updates.">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #4a7c59;
+            --light-green: #6b9c7a;
+            --accent-green: #8fbc8f;
+            --pale-green: #e8f5e8;
+            --warm-beige: #f5f1eb;
+            --soft-orange: #ffa726;
+            --light-blue: #81c784;
+            --warm-gray: #6b6860;
+            --dark-gray: #2d2d2d;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            line-height: 1.2;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        p, li {
+            margin-bottom: 1rem;
+            max-width: 65ch;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section:nth-child(even) {
+            background-color: var(--warm-beige);
+        }
+
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-placeholder {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            text-decoration: none;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover,
+        .nav a:focus {
+            color: var(--primary-green);
+            outline: 2px solid var(--primary-green);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: var(--white);
+            border-color: var(--primary-green);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background: var(--light-green);
+            border-color: var(--light-green);
+            outline: 2px solid var(--primary-green);
+            outline-offset: 2px;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-green);
+            border-color: var(--primary-green);
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background: var(--pale-green);
+            outline: 2px solid var(--primary-green);
+            outline-offset: 2px;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Hero section */
+        .hero {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--pale-green) 0%, var(--warm-beige) 50%, #fff8f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(74, 124, 89, 0.05) 0%, transparent 70%);
+            transform: rotate(15deg);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--warm-gray);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .image-placeholder {
+            background: var(--white);
+            border: 3px dashed var(--light-green);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            color: var(--warm-gray);
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(74, 124, 89, 0.02) 50%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-placeholder:hover {
+            border-color: var(--primary-green);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .image-placeholder:hover::before {
+            opacity: 1;
+        }
+
+        .image-placeholder strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-green);
+            font-size: 1.1rem;
+        }
+
+        /* Trust chips */
+        .trust-chips {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 2rem 0;
+            background: linear-gradient(90deg, var(--white) 0%, var(--pale-green) 50%, var(--white) 100%);
+        }
+
+        .chip {
+            background: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            color: var(--primary-green);
+            box-shadow: var(--shadow);
+            border: 2px solid var(--pale-green);
+            transition: all 0.3s ease;
+        }
+
+        .chip:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-green);
+        }
+
+        /* Grid layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-green), var(--light-green), var(--accent-green));
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card:hover::before {
+            transform: translateX(0);
+        }
+
+        .plan-card {
+            position: relative;
+            text-align: center;
+        }
+
+        .plan-card.featured {
+            border: 2px solid var(--primary-green);
+            transform: scale(1.02);
+            background: linear-gradient(135deg, var(--white) 0%, var(--pale-green) 100%);
+        }
+
+        .plan-card.featured::before {
+            content: "Best Value";
+            position: absolute;
+            top: -0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--soft-orange), #ff8a65);
+            color: var(--white);
+            padding: 0.25rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin: 1rem 0;
+        }
+
+        .savings {
+            color: #16a34a;
+            font-weight: 600;
+            background: #dcfce7;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        /* Lists */
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+
+        /* FAQ styles */
+        details {
+            background: var(--white);
+            border: 1px solid #e5e7eb;
+            border-radius: var(--border-radius);
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        details:hover {
+            box-shadow: var(--shadow);
+            border-color: var(--light-green);
+        }
+
+        summary {
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-green);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        summary::after {
+            content: '+';
+            position: absolute;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        summary:hover,
+        summary:focus {
+            background: var(--pale-green);
+            outline: 2px solid var(--primary-green);
+            outline-offset: -2px;
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid #e5e7eb;
+            background: linear-gradient(90deg, var(--pale-green), var(--white));
+        }
+
+        details p {
+            padding: 0 1.5rem 1.5rem;
+            margin-bottom: 0;
+        }
+
+        /* Footer styles */
+        .footer {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, #1a1a1a 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-green), transparent);
+        }
+
+        /* Enhanced visual elements */
+        .section-accent {
+            position: relative;
+        }
+
+        .section-accent::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-green), var(--light-green));
+            border-radius: 2px;
+        }
+
+        .stats-highlight {
+            background: linear-gradient(135deg, var(--pale-green), var(--white));
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-green);
+            margin: 1rem 0;
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .process-step::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.875rem;
+        }
+
+        .process-steps {
+            counter-reset: step-counter;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content > :first-child {
+                order: 2;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            .trust-chips {
+                gap: 1rem;
+            }
+
+            .chip {
+                font-size: 0.875rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles */
+        *:focus {
+            outline: 2px solid var(--primary-green);
+            outline-offset: 2px;
+        }
+
+        /* Skip to content link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1001;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Sticky Header -->
+    <header class="header" role="banner">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <div class="logo-placeholder" title="Puppy Loop Ames Logo">
+                        PL
+                    </div>
+                    <a href="#" class="logo-text" aria-label="Puppy Loop Ames - Home">Puppy Loop Ames</a>
+                </div>
+                <nav role="navigation" aria-label="Main navigation">
+                    <ul class="nav">
+                        <li><a href="#plans">Plans</a></li>
+                        <li><a href="#why-walks">Why Walks</a></li>
+                        <li><a href="#faqs">FAQs</a></li>
+                        <li><a href="#book" class="btn btn-primary">Book</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" role="banner">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Reliable Dog Walking for Busy Ames Families</h1>
+                        <p>Professional, consistent exercise for your dog while you focus on work, studies, or life. Trusted by Iowa State students, staff, and local families.</p>
+                        <div class="cta-buttons">
+                            <a href="#book" class="btn btn-primary">Book a Meet & Greet</a>
+                            <a href="#plans" class="btn btn-secondary">Choose a Plan</a>
+                        </div>
+                    </div>
+                    <div class="image-placeholder">
+                        <strong>Hero Image Suggestion:</strong>
+                        Happy golden retriever on a leash walking on a tree-lined Ames street, with Iowa State campus visible in background
+                        <br><br>
+                        <em>ALT text: "Golden retriever walking happily on tree-lined street in Ames, Iowa near Iowa State campus"</em>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Chips -->
+        <section class="trust-chips">
+            <div class="chip">Ames, IA Local</div>
+            <div class="chip">Insured Walker</div>
+            <div class="chip">GPS Updates</div>
+        </section>
+
+        <!-- Why Walks Matter -->
+        <section class="section section-accent" id="why-walks">
+            <div class="container">
+                <h2>Why Daily Walks Matter for Your Dog</h2>
+                <div class="image-placeholder" style="max-width: 600px; margin: 2rem auto; min-height: 200px;">
+                    <strong>Section Image Suggestion:</strong>
+                    Split image showing before/after: tired, happy dog after exercise next to energetic dog ready for walk
+                    <br><br>
+                    <em>ALT text: "Comparison showing energetic dog before walk and content, tired dog after exercise"</em>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <h3>Physical Health & Weight Control</h3>
+                        <ul>
+                            <li><div class="stats-highlight"><strong>Daily activity target:</strong> Dogs need approximately 30 minutes of physical activity daily, adjusted for breed, age, and health status<sup>[1]</sup></div></li>
+                            <li><div class="stats-highlight"><strong>Weight management:</strong> About 59% of U.S. dogs are overweight or obese. Consistent walking supports healthy weight and joint function<sup>[3]</sup></div></li>
+                            <li><strong>Puppy-safe exercise:</strong> Young dogs need roughly 5 minutes per month of age per session, gradually increasing as they mature<sup>[2]</sup></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Mental Enrichment & Behavior</h3>
+                        <ul>
+                            <li><div class="stats-highlight"><strong>Stress reduction:</strong> Sniffing and exploring outdoors provides essential mental enrichment that reduces anxiety and improves behavior<sup>[4]</sup></div></li>
+                            <li><strong>Routine benefits:</strong> Consistent exercise helps establish healthy sleep patterns and reduces destructive behaviors</li>
+                            <li><strong>Weather-smart approach:</strong> Iowa's climate requires careful attention to heat protection, paw safety, and proper hydration<sup>[5]</sup></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How I Work -->
+        <section class="section">
+            <div class="container">
+                <h2>How I Work</h2>
+                <div class="image-placeholder" style="max-width: 500px; margin: 2rem auto; min-height: 180px;">
+                    <strong>Process Image Suggestion:</strong>
+                    Professional walker with clipboard checking dog, GPS phone showing route, happy dog with fresh water
+                    <br><br>
+                    <em>ALT text: "Professional dog walker following safety checklist with GPS tracking and water for dog"</em>
+                </div>
+                <div class="grid-2 process-steps">
+                    <div class="card process-step">
+                        <h3>Pre-Walk Safety Check</h3>
+                        <p>Every visit begins with a quick assessment of your dog's energy level, weather conditions, and any special instructions you've provided.</p>
+                    </div>
+                    <div class="card process-step">
+                        <h3>Enrichment-First Pace</h3>
+                        <p>I let dogs set the pace for sniffing and exploring. This isn't just exercise—it's mental stimulation that improves behavior and reduces stress.</p>
+                    </div>
+                    <div class="card process-step">
+                        <h3>GPS Photo Summary</h3>
+                        <p>After each walk, you'll receive a brief text with a photo and location update, so you know exactly where we went and how your dog did.</p>
+                    </div>
+                    <div class="card process-step">
+                        <h3>Weather-Smart Walking</h3>
+                        <p>Iowa weather requires flexibility. I monitor temperature extremes, protect paws from hot pavement or ice, and adjust routes for seasonal conditions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="section section-accent" id="pricing">
+            <div class="container">
+                <h2>Simple, Transparent Pricing</h2>
+                <div class="image-placeholder" style="max-width: 400px; margin: 2rem auto; min-height: 150px;">
+                    <strong>Pricing Image Suggestion:</strong>
+                    Clean, simple graphic showing clock (30 min) + dollar sign + happy dog = great value
+                    <br><br>
+                    <em>ALT text: "Simple pricing graphic showing 30 minutes plus affordable rate equals happy dog"</em>
+                </div>
+                <div class="card" style="text-align: center; max-width: 400px; margin: 2rem auto;">
+                    <h3>A La Carte Walking</h3>
+                    <div class="price">$20<span style="font-size: 1rem; font-weight: normal;">/hour per dog</span></div>
+                    <p><strong>Example:</strong> 30-minute visit = $10</p>
+                    <p>Perfect for occasional walks or trying out the service. Book individual visits as needed.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plans (Subscriptions) -->
+        <section class="section" id="plans">
+            <div class="container">
+                <h2>Subscription Plans - Better Value, Better Results</h2>
+                <p style="text-align: center; font-size: 1.125rem; color: var(--warm-gray); margin-bottom: 3rem;">Consistent exercise leads to happier, healthier dogs. Our subscription plans offer priority scheduling, GPS updates, and monthly rollovers.</p>
+                
+                <div class="image-placeholder" style="max-width: 600px; margin: 2rem auto; min-height: 200px;">
+                    <strong>Plans Image Suggestion:</strong>
+                    Calendar view showing consistent walk schedule with happy, healthy dogs getting regular exercise
+                    <br><br>
+                    <em>ALT text: "Calendar showing consistent weekly dog walking schedule with healthy, active dogs"</em>
+                </div>
+                
+                <div class="grid-2">
+                    <div class="plan-card card">
+                        <h3>Balanced Routine</h3>
+                        <div class="price">$105<span style="font-size: 1rem; font-weight: normal;">/month</span></div>
+                        <div class="savings">Save $15/month vs a la carte</div>
+                        <ul class="feature-list">
+                            <li>3 × 30-minute walks per week</li>
+                            <li>~6 hours of exercise monthly</li>
+                            <li>Priority scheduling</li>
+                            <li>GPS photo updates</li>
+                            <li>2 monthly rollovers</li>
+                        </ul>
+                        <p><em>Regular pricing: $120/month a la carte</em></p>
+                        <a href="#book" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">Choose Balanced</a>
+                    </div>
+
+                    <div class="plan-card card featured">
+                        <h3>Everyday Energy</h3>
+                        <div class="price">$175<span style="font-size: 1rem; font-weight: normal;">/month</span></div>
+                        <div class="savings">Save $25/month vs a la carte</div>
+                        <ul class="feature-list">
+                            <li>5 × 30-minute walks per week</li>
+                            <li>~10 hours of exercise monthly</li>
+                            <li>Priority scheduling</li>
+                            <li>GPS photo updates</li>
+                            <li>2 monthly rollovers</li>
+                            <li><strong>Best for high-energy dogs</strong></li>
+                        </ul>
+                        <p><em>Regular pricing: $200/month a la carte</em></p>
+                        <a href="#book" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Choose Everyday</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="section">
+            <div class="container">
+                <h2>What to Expect in 2-4 Weeks</h2>
+                <div class="image-placeholder" style="max-width: 700px; margin: 2rem auto; min-height: 220px;">
+                    <strong>Results Image Suggestion:</strong>
+                    Before/after transformation: anxious, overweight dog becoming calm, fit, and happy
+                    <br><br>
+                    <em>ALT text: "Transformation showing dog's improvement from anxious and overweight to calm, fit, and happy"</em>
+                </div>
+                <div class="grid-3">
+                    <div class="card">
+                        <h3>Better Behavior</h3>
+                        <p>Consistent exercise reduces destructive behaviors like excessive barking, chewing, and digging. Mental enrichment from outdoor exploration helps anxious dogs feel calmer<sup>[4]</sup>.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Improved Fitness</h3>
+                        <p>Regular walking supports healthy weight maintenance and joint mobility. For overweight dogs, gradual activity increase helps achieve target weight safely<sup>[3]</sup>.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Happier Mood</h3>
+                        <p>Dogs with consistent routines show reduced stress signs and improved sleep patterns. Both you and your dog benefit from the peace of mind that comes with reliable care.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQs -->
+        <section class="section" id="faqs">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <details>
+                        <summary>How do you handle Iowa weather extremes?</summary>
+                        <p>I monitor temperature closely and adjust walks accordingly. In summer, I avoid peak heat hours and check pavement temperature. In winter, I watch for ice and salt irritation, and keep walks shorter in extreme cold. Dogs always have access to fresh water, and I'll recommend indoor alternatives during severe weather<sup>[5]</sup>.</p>
+                    </details>
+
+                    <details>
+                        <summary>What about puppies? How long should their walks be?</summary>
+                        <p>Puppies need gentle, age-appropriate exercise. I follow the guideline of roughly 5 minutes per month of age per session<sup>[2]</sup>. A 4-month-old puppy would get about 20 minutes of activity, focusing more on exploration and socialization than intense exercise. We gradually increase duration as they grow.</p>
+                    </details>
+
+                    <details>
+                        <summary>My dog is anxious or pulls on walks. Can you help?</summary>
+                        <p>Absolutely. I use positive, patient techniques for anxious or reactive dogs. This includes letting them set the pace for sniffing (which reduces stress), using consistent routes until they're comfortable, and working on gentle leash manners. Many behavioral issues improve with regular, low-pressure exercise<sup>[4]</sup>.</p>
+                    </details>
+
+                    <details>
+                        <summary>Do you customize walks for different breeds and ages?</summary>
+                        <p>Yes, every dog gets individualized attention. High-energy breeds might get more vigorous exercise, while older dogs or brachycephalic (flat-faced) breeds get gentler, shorter walks with more rest breaks. I work with you to understand your dog's specific needs and adjust accordingly<sup>[1]</sup>.</p>
+                    </details>
+
+                    <details>
+                        <summary>What if I need to cancel or reschedule?</summary>
+                        <p>I understand that schedules change. For a la carte bookings, just give me 4 hours notice when possible. Subscription members get 2 monthly rollovers, so missed walks can be made up later in the month. Emergency cancellations are always accommodated without penalty.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="section">
+            <div class="container">
+                <h2>About Your Walker</h2>
+                <div class="grid-2">
+                    <div>
+                        <div class="image-placeholder">
+                            <strong>Photo Suggestion:</strong>
+                            Professional headshot of Reza with a friendly dog, both looking happy and relaxed
+                            <br><br>
+                            <em>ALT text: "Reza, Iowa State Software Engineering student and professional dog walker, smiling with a happy client's dog"</em>
+                        </div>
+                        <div class="image-placeholder" style="margin-top: 1rem; min-height: 200px;">
+                            <strong>Location Image Suggestion:</strong>
+                            Collage of Ames walking spots: campus paths, Ada Hayden Heritage Park, tree-lined neighborhoods
+                            <br><br>
+                            <em>ALT text: "Beautiful walking locations in Ames including Iowa State campus, Ada Hayden Park, and residential areas"</em>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Hi, I'm Reza</h3>
+                        <p>I'm a Software Engineering student at Iowa State University who started Pup Loop Ames because I believe every dog deserves consistent, caring exercise.</p>
+                        
+                        <p>Living in Ames, I know the great walking spots—from campus paths to Ada Hayden Heritage Park trails. I understand the unique challenges of Iowa weather and the busy schedules of students, faculty, and families.</p>
+                        
+                        <p>I'm fully insured and treat every dog like they're my own. Between classes and coding, there's nothing I enjoy more than helping Ames dogs get the activity and attention they need to thrive.</p>
+                        
+                        <ul class="feature-list">
+                            <li>Iowa State Software Engineering student</li>
+                            <li>Fully insured walker</li>
+                            <li>Local Ames knowledge</li>
+                            <li>Flexible scheduling around your routine</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Book a Meet & Greet -->
+        <section class="section" id="book">
+            <div class="container">
+                <div class="image-placeholder" style="max-width: 500px; margin: 0 auto 2rem; min-height: 180px;">
+                    <strong>Contact Image Suggestion:</strong>
+                    Friendly meet-and-greet scene with walker, dog, and owner shaking hands in front of Ames home
+                    <br><br>
+                    <em>ALT text: "Friendly meet and greet between dog walker, pet owner, and happy dog in front of Ames home"</em>
+                </div>
+                <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Let's meet your dog and discuss the best walking plan for your family's needs. The meet & greet is always free and helps ensure we're a perfect match.</p>
+                    
+                    <div style="margin: 2rem 0;">
+                        <p><strong>Call or Text:</strong> (515) 555-WALK</p>
+                        <p><strong>Email:</strong> hello@puploopames.com</p>
+                    </div>
+                    
+                    <div class="cta-buttons" style="justify-content: center;">
+                        <a href="tel:515-555-9255" class="btn btn-primary">Call Now</a>
+                        <a href="sms:515-555-9255" class="btn btn-secondary">Text Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Policies -->
+        <section class="section">
+            <div class="container">
+                <h2>Policies & Safety</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Billing & Payment</h3>
+                        <ul>
+                            <li>A la carte walks: payment due after service</li>
+                            <li>Subscriptions: billed monthly in advance</li>
+                            <li>Accepted: Cash, Venmo, PayPal, Zelle</li>
+                            <li>Late fees: $10 after 14 days overdue</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Keys & Access</h3>
+                        <ul>
+                            <li>Secure key pickup/drop-off protocol</li>
+                            <li>Alternative: lockbox or garage code access</li>
+                            <li>Keys never leave Ames area</li>
+                            <li>Full liability insurance coverage</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Safety & Updates</h3>
+                        <ul>
+                            <li>GPS tracking shared after each walk</li>
+                            <li>Photo updates for every visit</li>
+                            <li>Emergency vet contact information required</li>
+                            <li>Weather cancellation policy in place</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Service Standards</h3>
+                        <ul>
+                            <li>Arrives within 15-minute window</li>
+                            <li>Minimum 25-minute walks (30-min bookings)</li>
+                            <li>Fresh water available during walks</li>
+                            <li>Waste cleanup included in every service</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sources -->
+    <footer class="footer">
+        <div class="container">
+            <h3 style="color: var(--white); margin-bottom: 2rem;">Sources & References</h3>
+            <div style="text-align: left; max-width: 800px; margin: 0 auto;">
+                <p><strong>[1]</strong> American Veterinary Medical Association (AVMA) – Dog exercise and walking guidance, including daily activity norms and practical recommendations for pet owners.</p>
+                
+                <p><strong>[2]</strong> American Kennel Club (AKC) – Puppy exercise guidelines recommending approximately 5 minutes of exercise per month of age per session for developing dogs.</p>
+                
+                <p><strong>[3]</strong> Association for Pet Obesity Prevention – Research indicating approximately 59% of U.S. dogs are overweight or obese, with walking cited as key prevention strategy.</p>
+                
+                <p><strong>[4]</strong> ASPCA and ASPCA Professional – Educational resources on the enrichment value of sniffing, exploration, and structured outdoor activity for behavioral health.</p>
+                
+                <p><strong>[5]</strong> AVMA, Cornell University College of Veterinary Medicine, and Humane Society of the United States – Weather safety guidelines for pets including heat protection, cold exposure, paw safety, and hydration protocols.</p>
+            </div>
+            
+            <hr style="margin: 2rem 0; border: none; border-top: 1px solid #555;">
+            
+            <p>&copy; 2025 Puppy Loop Ames. Professional dog walking service in Ames, Iowa.</p>
+        </div>
+    </footer>
+</body>
+</html>
