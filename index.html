@@ -102,17 +102,9 @@
             gap: 0.75rem;
         }
 
-        .logo-placeholder {
+        .logo {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, var(--primary-green), var(--soft-orange));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-weight: bold;
-            font-size: 1.2rem;
         }
 
         .logo-text {
@@ -258,50 +250,10 @@
             flex-wrap: wrap;
         }
 
-        .image-placeholder {
-            background: var(--white);
-            border: 3px dashed var(--light-green);
+        .responsive-image {
+            max-width: 100%;
             border-radius: var(--border-radius);
-            padding: 2rem;
-            text-align: center;
-            color: var(--warm-gray);
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .image-placeholder::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(74, 124, 89, 0.02) 50%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .image-placeholder:hover {
-            border-color: var(--primary-green);
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .image-placeholder:hover::before {
-            opacity: 1;
-        }
-
-        .image-placeholder strong {
             display: block;
-            margin-bottom: 0.5rem;
-            color: var(--primary-green);
-            font-size: 1.1rem;
         }
 
         /* Trust chips */
@@ -662,9 +614,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo-container">
-                    <div class="logo-placeholder" title="Puppy Loop Ames Logo">
-                        PL
-                    </div>
+                    <img src="images/logo.svg" class="logo" alt="Puppy Loop Ames logo">
                     <a href="#" class="logo-text" aria-label="Puppy Loop Ames - Home">Puppy Loop Ames</a>
                 </div>
                 <nav role="navigation" aria-label="Main navigation">
@@ -692,12 +642,7 @@
                             <a href="#plans" class="btn btn-secondary">Choose a Plan</a>
                         </div>
                     </div>
-                    <div class="image-placeholder">
-                        <strong>Hero Image Suggestion:</strong>
-                        Happy golden retriever on a leash walking on a tree-lined Ames street, with Iowa State campus visible in background
-                        <br><br>
-                        <em>ALT text: "Golden retriever walking happily on tree-lined street in Ames, Iowa near Iowa State campus"</em>
-                    </div>
+                    <img src="images/hero.svg" class="responsive-image" alt="Golden retriever walking happily on tree-lined street in Ames, Iowa near Iowa State campus">
                 </div>
             </div>
         </section>
@@ -713,12 +658,7 @@
         <section class="section section-accent" id="why-walks">
             <div class="container">
                 <h2>Why Daily Walks Matter for Your Dog</h2>
-                <div class="image-placeholder" style="max-width: 600px; margin: 2rem auto; min-height: 200px;">
-                    <strong>Section Image Suggestion:</strong>
-                    Split image showing before/after: tired, happy dog after exercise next to energetic dog ready for walk
-                    <br><br>
-                    <em>ALT text: "Comparison showing energetic dog before walk and content, tired dog after exercise"</em>
-                </div>
+                <img src="images/why-walks.svg" class="responsive-image" style="max-width: 600px; margin: 2rem auto;" alt="Comparison showing energetic dog before walk and content, tired dog after exercise">
                 <div class="grid-2">
                     <div>
                         <h3>Physical Health & Weight Control</h3>
@@ -744,12 +684,7 @@
         <section class="section">
             <div class="container">
                 <h2>How I Work</h2>
-                <div class="image-placeholder" style="max-width: 500px; margin: 2rem auto; min-height: 180px;">
-                    <strong>Process Image Suggestion:</strong>
-                    Professional walker with clipboard checking dog, GPS phone showing route, happy dog with fresh water
-                    <br><br>
-                    <em>ALT text: "Professional dog walker following safety checklist with GPS tracking and water for dog"</em>
-                </div>
+                <img src="images/how-i-work.svg" class="responsive-image" style="max-width: 500px; margin: 2rem auto;" alt="Professional dog walker following safety checklist with GPS tracking and water for dog">
                 <div class="grid-2 process-steps">
                     <div class="card process-step">
                         <h3>Pre-Walk Safety Check</h3>
@@ -776,12 +711,7 @@
             <div class="container">
                 <a href="#plans" class="promo-banner">New to Pup Loop Ames? Get your first week free when you sign up for a monthly plan!</a>
                 <h2>Simple, Transparent Pricing</h2>
-                <div class="image-placeholder" style="max-width: 400px; margin: 2rem auto; min-height: 150px;">
-                    <strong>Pricing Image Suggestion:</strong>
-                    Clean, simple graphic showing clock (30 min) + dollar sign + happy dog = great value
-                    <br><br>
-                    <em>ALT text: "Simple pricing graphic showing 30 minutes plus affordable rate equals happy dog"</em>
-                </div>
+                <img src="images/pricing.svg" class="responsive-image" style="max-width: 400px; margin: 2rem auto;" alt="Simple pricing graphic showing 30 minutes plus affordable rate equals happy dog">
                 <div class="card" style="text-align: center; max-width: 400px; margin: 2rem auto;">
                     <div class="promo-banner" style="margin-bottom: 1rem;">Special Trial Offer: First walk only $10 for 30 minutes!</div>
                     <h3>A La Carte Walking</h3>
@@ -802,13 +732,8 @@
                 <p style="text-align: center; font-size: 1.125rem; color: var(--warm-gray); margin-bottom: 1rem;"><strong>$10 first-time walk</strong> &middot; First week free for new customers who purchase a month.</p>
                 <p style="text-align: center; font-size: 1.125rem; color: var(--warm-gray); margin-bottom: 3rem;">Consistent exercise leads to happier, healthier dogs. Our subscription plans offer priority scheduling, GPS updates, and monthly rollovers.</p>
                 
-                <div class="image-placeholder" style="max-width: 600px; margin: 2rem auto; min-height: 200px;">
-                    <strong>Plans Image Suggestion:</strong>
-                    Calendar view showing consistent walk schedule with happy, healthy dogs getting regular exercise
-                    <br><br>
-                    <em>ALT text: "Calendar showing consistent weekly dog walking schedule with healthy, active dogs"</em>
-                </div>
-                
+                <img src="images/plans.svg" class="responsive-image" style="max-width: 600px; margin: 2rem auto;" alt="Calendar showing consistent weekly dog walking schedule with healthy, active dogs">
+
                 <div class="grid-2">
                     <div class="plan-card card">
                         <h3>Balanced Routine</h3>
@@ -850,12 +775,7 @@
         <section class="section">
             <div class="container">
                 <h2>What to Expect in 2-4 Weeks</h2>
-                <div class="image-placeholder" style="max-width: 700px; margin: 2rem auto; min-height: 220px;">
-                    <strong>Results Image Suggestion:</strong>
-                    Before/after transformation: anxious, overweight dog becoming calm, fit, and happy
-                    <br><br>
-                    <em>ALT text: "Transformation showing dog's improvement from anxious and overweight to calm, fit, and happy"</em>
-                </div>
+                <img src="images/results.svg" class="responsive-image" style="max-width: 700px; margin: 2rem auto;" alt="Transformation showing dog's improvement from anxious and overweight to calm, fit, and happy">
                 <div class="grid-3">
                     <div class="card">
                         <h3>Better Behavior</h3>
@@ -912,18 +832,8 @@
                 <h2>About Your Walker</h2>
                 <div class="grid-2">
                     <div>
-                        <div class="image-placeholder">
-                            <strong>Photo Suggestion:</strong>
-                            Professional headshot of Reza with a friendly dog, both looking happy and relaxed
-                            <br><br>
-                            <em>ALT text: "Reza, Iowa State Software Engineering student and professional dog walker, smiling with a happy client's dog"</em>
-                        </div>
-                        <div class="image-placeholder" style="margin-top: 1rem; min-height: 200px;">
-                            <strong>Location Image Suggestion:</strong>
-                            Collage of Ames walking spots: campus paths, Ada Hayden Heritage Park, tree-lined neighborhoods
-                            <br><br>
-                            <em>ALT text: "Beautiful walking locations in Ames including Iowa State campus, Ada Hayden Park, and residential areas"</em>
-                        </div>
+                        <img src="images/headshot.svg" class="responsive-image" alt="Reza, Iowa State Software Engineering student and professional dog walker, smiling with a happy client's dog">
+                        <img src="images/locations.svg" class="responsive-image" style="margin-top: 1rem;" alt="Beautiful walking locations in Ames including Iowa State campus, Ada Hayden Park, and residential areas">
                     </div>
                     <div>
                         <h3>Hi, I'm Reza</h3>
@@ -947,12 +857,7 @@
         <!-- Book a Meet & Greet -->
         <section class="section" id="book">
             <div class="container">
-                <div class="image-placeholder" style="max-width: 500px; margin: 0 auto 2rem; min-height: 180px;">
-                    <strong>Contact Image Suggestion:</strong>
-                    Friendly meet-and-greet scene with walker, dog, and owner shaking hands in front of Ames home
-                    <br><br>
-                    <em>ALT text: "Friendly meet and greet between dog walker, pet owner, and happy dog in front of Ames home"</em>
-                </div>
+                <img src="images/contact.svg" class="responsive-image" style="max-width: 500px; margin: 0 auto 2rem;" alt="Friendly meet and greet between dog walker, pet owner, and happy dog in front of Ames home">
                 <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
                     <h2>Ready to Get Started?</h2>
                     <p>Let's meet your dog and discuss the best walking plan for your family's needs. The meet & greet is always free and helps ensure we're a perfect match.</p>
