@@ -995,5 +995,26 @@
         </div>
     </footer>
     <script src="reveal.js" defer></script>
+    <script>
+    (function(){
+      // Scrollspy: highlight nav link matching the section in view
+      var links = Array.from(document.querySelectorAll('.nav a[href^="#"]'));
+      if (!links.length) return;
+      var map = new Map(); // sectionEl -> linkEl
+      links.forEach(function(a){
+        var id = a.getAttribute('href').slice(1);
+        var sec = document.getElementById(id);
+        if (sec) map.set(sec, a);
+      });
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(!e.isIntersecting) return;
+          map.forEach(function(link){ link.classList.remove('is-active'); });
+          var link = map.get(e.target); if (link) link.classList.add('is-active');
+        });
+      }, { threshold: 0.6 });
+      map.forEach(function(_, sec){ io.observe(sec); });
+    })();
+    </script>
 </body>
 </html>
