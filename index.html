@@ -621,11 +621,105 @@
         .skip-link:focus {
             top: 6px;
         }
+
+        /* Header layout and mobile navigation */
+        .header-content nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menu-icon,
+        .menu-icon::before,
+        .menu-icon::after {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: var(--dark-gray);
+            border-radius: 2px;
+            position: relative;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .menu-icon::before,
+        .menu-icon::after {
+            content: "";
+            position: absolute;
+            left: 0;
+        }
+
+        .menu-icon::before {
+            top: -6px;
+        }
+
+        .menu-icon::after {
+            top: 6px;
+        }
+
+        .menu-toggle[aria-expanded="true"] .menu-icon {
+            background: transparent;
+        }
+
+        .menu-toggle[aria-expanded="true"] .menu-icon::before {
+            transform: translateY(6px) rotate(45deg);
+        }
+
+        .menu-toggle[aria-expanded="true"] .menu-icon::after {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            box-shadow: var(--shadow);
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding: 1rem 0;
+            z-index: 1000;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: var(--primary-green);
+            z-index: 1001;
+        }
+
+        .header.shadow-active {
+            box-shadow: var(--shadow-hover);
+        }
+
+        @media (max-width: 768px) {
+            .header-content nav {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
     </style>
 
     <link rel="stylesheet" href="modern-additions.css" />
 </head>
 <body>
+    <div id="scroll-progress" aria-hidden="true"></div>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Sticky Header -->
@@ -644,6 +738,10 @@
                         <li><a href="#book" class="btn btn-primary">Schedule Now!</a></li>
                     </ul>
                 </nav>
+                <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="menu-icon"></span>
+                </button>
+                <nav class="mobile-nav" aria-label="Mobile navigation"></nav>
             </div>
         </div>
     </header>
@@ -995,5 +1093,38 @@
         </div>
     </footer>
     <script src="reveal.js" defer></script>
+    <script>
+        const header = document.querySelector('.header');
+        const progressBar = document.getElementById('scroll-progress');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const desktopNav = document.querySelector('.header-content nav');
+
+        if (desktopNav && mobileNav) {
+            const navList = desktopNav.querySelector('ul').cloneNode(true);
+            mobileNav.appendChild(navList);
+        }
+
+        const updateProgress = () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = percent + '%';
+            if (scrollTop > 0) {
+                header.classList.add('shadow-active');
+            } else {
+                header.classList.remove('shadow-active');
+            }
+        };
+
+        window.addEventListener('scroll', updateProgress);
+        updateProgress();
+
+        menuToggle?.addEventListener('click', () => {
+            const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', String(!expanded));
+            mobileNav.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
