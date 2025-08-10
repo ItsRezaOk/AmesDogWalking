@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -254,6 +255,19 @@
             max-width: 100%;
             border-radius: var(--border-radius);
             display: block;
+        }
+
+        .image-pair {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .image-pair img {
+            max-width: 100%;
+            height: auto;
         }
 
         /* Trust chips */
@@ -605,6 +619,8 @@
             top: 6px;
         }
     </style>
+
+    <link rel="stylesheet" href="modern-additions.css" />
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -659,9 +675,10 @@
         <section class="section section-accent" id="why-walks">
             <div class="container">
                 <h2>Why Daily Walks Matter for Your Dog</h2>
-                <img src="images/running.jpg" class="responsive-image" style="max-width: 600px; margin: 2rem auto;" alt="Comparison showing energetic dog before walk and content, tired dog after exercise">
-
-                <img src="images/happy.jpg" class="responsive-image" style="max-width: 600px; margin: 2rem auto;" alt="Comparison showing energetic dog before walk and content, tired dog after exercise">
+                <div class="image-pair" style="max-width: 600px; margin: 2rem auto;">
+                    <img src="images/running.jpg" class="responsive-image" alt="Energetic dog sprinting before a walk">
+                    <img src="images/happy.jpg" class="responsive-image" alt="Relaxed dog resting after a good walk">
+                </div>
                 <div class="grid-2">
                     <div>
                         <h3>Physical Health & Weight Control</h3>
@@ -714,9 +731,10 @@
             <div class="container">
                 <a href="#plans" class="promo-banner">New to Pup Loop Ames? Get your first week free when you sign up for a monthly plan!</a>
                 <h2>Simple, Transparent Pricing</h2>
-                <img src="images/simple.png" class="responsive-image" style="max-width: 400px; margin: 2rem auto;" alt="Simple pricing graphic showing 30 minutes plus affordable rate equals happy dog">
-
-                <img src="images/happy.jpg" class="responsive-image" style="max-width: 400px; margin: 2rem auto;" alt="Simple pricing graphic showing 30 minutes plus affordable rate equals happy dog">
+                <div class="image-pair" style="max-width: 400px; margin: 2rem auto;">
+                    <img src="images/simple.png" class="responsive-image" alt="Graphic showing 30‑minute walk pricing formula">
+                    <img src="images/happy.jpg" class="responsive-image" alt="Smiling dog illustrating affordable walks">
+                </div>
                 <div class="card" style="text-align: center; max-width: 400px; margin: 2rem auto;">
                     <div class="promo-banner" style="margin-bottom: 1rem;">Special Trial Offer: First walk only $10 for 30 minutes!</div>
                     <h3>A La Carte Walking</h3>
@@ -737,8 +755,10 @@
                 <p style="text-align: center; font-size: 1.125rem; color: var(--warm-gray); margin-bottom: 1rem;"><strong>$10 first-time walk</strong> &middot; First week free for new customers who purchase a month.</p>
                 <p style="text-align: center; font-size: 1.125rem; color: var(--warm-gray); margin-bottom: 3rem;">Consistent exercise leads to happier, healthier dogs. Our subscription plans offer priority scheduling, GPS updates, and monthly rollovers.</p>
                 
-                <img src="images/funny2.jpg" class="responsive-image" style="max-width: 600px; margin: 2rem auto;" alt="Calendar showing consistent weekly dog walking schedule with healthy, active dogs">
-                <img src="images/funny1.jpg" class="responsive-image" style="max-width: 600px; margin: 2rem auto;" alt="Calendar showing consistent weekly dog walking schedule with healthy, active dogs">
+                <div class="image-pair" style="max-width: 600px; margin: 2rem auto;">
+                    <img src="images/funny2.jpg" class="responsive-image" alt="Playful dog enjoying a walk">
+                    <img src="images/funny1.jpg" class="responsive-image" alt="Goofy dog smiling about walk time">
+                </div>
 
                 <div class="grid-2">
                     <div class="plan-card card">
@@ -859,8 +879,10 @@
                 <h2>About Your Walker</h2>
                 <div class="grid-2">
                     <div>
-                        <img src="images/reza.jpeg" class="responsive-image" alt="Reza, Iowa State Software Engineering student and professional dog walker, smiling with a happy client's dog">
-                        <img src="images/bridge.webp" class="responsive-image" style="margin-top: 1rem;" alt="Beautiful walking locations in Ames including Iowa State campus, Ada Hayden Park, and residential areas">
+                        <div class="image-pair" style="max-width: 400px; margin: 0 auto;">
+                            <img src="images/reza.jpeg" class="responsive-image" alt="Reza, Iowa State Software Engineering student and professional dog walker, smiling with a happy client's dog">
+                            <img src="images/bridge.webp" class="responsive-image" alt="Beautiful walking locations in Ames including Iowa State campus, Ada Hayden Park, and residential areas">
+                        </div>
                     </div>
                     <div>
                         <h3>Hi, I'm Reza</h3>
@@ -969,5 +991,6 @@
             <p>&copy; 2025 Puppy Loop Ames. Dog Walking in Ames, Iowa.</p>
         </div>
     </footer>
+    <script src="reveal.js" defer></script>
 </body>
 </html>
