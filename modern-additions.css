@@ -168,6 +168,7 @@ h3 { font-weight: 600; }
   border-radius:12px;
 }
 
+<<<<<<< HEAD
 /* Plans hero background */
 .section-plans {
   position: relative;
@@ -228,5 +229,69 @@ h3 { font-weight: 600; }
   }
   .offer-card .chip {
     font-size: 0.75rem;
+=======
+/* How I Work sticky photo and timeline */
+.section-how .container {
+  display: grid;
+  gap: 2rem;
+}
+
+.section-how .process-steps {
+  counter-reset: step;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section-how .process-step {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.section-how .process-step::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: var(--primary-green);
+  color: var(--white);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-how .process-step::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 2rem;
+  width: 2px;
+  height: calc(100% - 2rem);
+  background: var(--primary-green);
+}
+
+.section-how .process-step:last-child::after {
+  display: none;
+}
+
+.section-how img {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .section-how .container {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+  .section-how img {
+    position: sticky;
+    top: 2rem;
+>>>>>>> 91105f6fb3ecccba6958fcc1c975e14d5e4f888a
   }
 }
