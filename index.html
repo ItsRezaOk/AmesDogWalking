@@ -518,33 +518,6 @@
             margin: 1rem 0;
         }
 
-        .process-step {
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .process-step::before {
-            content: counter(step-counter);
-            counter-increment: step-counter;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 2rem;
-            height: 2rem;
-            background: linear-gradient(135deg, var(--primary-green), var(--light-green));
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.875rem;
-        }
-
-        .process-steps {
-            counter-reset: step-counter;
-        }
-
         /* Mobile responsive */
         @media (max-width: 768px) {
             .nav {
@@ -705,7 +678,7 @@
         </section>
 
         <!-- How I Work -->
-        <section class="section">
+        <section class="section section-how" id="how-i-work">
             <div class="container">
                 <h2>How I Work</h2>
                 <img src="images/process.png" class="responsive-image" style="max-width: 500px; margin: 2rem auto;" alt="Professional dog walker following safety checklist with GPS tracking and water for dog">
