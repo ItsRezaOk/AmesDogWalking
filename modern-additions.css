@@ -163,10 +163,11 @@ h3 { font-weight: 600; }
 @keyframes sheen{ to{ transform:translateX(120%);} }
 
 /* Focus visibility */
-.nav a:focus-visible,.btn.btn-primary:focus-visible{
+  .nav a:focus-visible,.btn.btn-primary:focus-visible{
   box-shadow:0 0 0 3px rgba(61,218,180,.45);
   border-radius:12px;
 }
+
 
 /* How I Work sticky photo and timeline */
 .section-how .container {
