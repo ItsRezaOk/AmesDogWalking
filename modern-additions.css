@@ -163,7 +163,70 @@ h3 { font-weight: 600; }
 @keyframes sheen{ to{ transform:translateX(120%);} }
 
 /* Focus visibility */
-.nav a:focus-visible,.btn.btn-primary:focus-visible{
+  .nav a:focus-visible,.btn.btn-primary:focus-visible{
   box-shadow:0 0 0 3px rgba(61,218,180,.45);
   border-radius:12px;
+}
+
+/* Plans hero background */
+.section-plans {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--warm-beige), var(--white));
+}
+.section-plans::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, var(--soft-orange) 0%, transparent 70%);
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* Promo card */
+.offer-card {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+/* Chips */
+.offer-card .chips {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.offer-card .chip {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: var(--sky-blue);
+  color: var(--dark-gray);
+  font-weight: 600;
+  font-size: 0.875rem;
+  box-shadow: none;
+  border: none;
+}
+.offer-card .chip-orange {
+  background: var(--soft-orange);
+}
+
+/* CTA */
+.offer-card .offer-cta {
+  margin-top: 1.5rem;
+  display: inline-block;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .offer-card {
+    padding: 1.5rem;
+  }
+  .offer-card .chip {
+    font-size: 0.75rem;
+  }
 }
